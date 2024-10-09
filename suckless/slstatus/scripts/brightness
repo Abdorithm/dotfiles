@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Function to echo the brightness info
+brightness_logo() {
+	if [ "$1" -eq 100 ]; then
+		echo -e "\U000f00e1" # brightness strength full
+	elif [ "$1" -ge 80 ]; then
+		echo -e "\U000f00e0" # brightness strength 4
+	elif [ "$1" -ge 45 ]; then
+		echo -e "\U000f00df" # brightness strength 3
+	elif [ "$1" -ge 20 ]; then
+		echo -e "\U000f00dd" # brightness strength 2
+	else
+		echo -e "\U000f00de" # brightness strength 1
+	fi
+}
+
+perc=$(light | cut -d. -f1)
+
+# Echo the brightness logo
+brightness_logo "$perc"

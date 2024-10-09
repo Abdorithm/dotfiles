@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Function to echo the mic info
+mic_logo() {
+	if [ "$1" == "f" ]; then
+		echo -e "\uf131 " # muted
+	else
+		echo -e "\uf130 "$2"" # mic level
+	fi
+}
+
+stat=$(amixer | grep 'Front Left: Capture' | cut -d ' ' -f8 | cut -b3)
+perc=$(pamixer --source alsa_input.pci-0000_00_1f.3.analog-stereo --get-volume)
+
+# Echo the mic logo
+mic_logo "$stat" "$perc"

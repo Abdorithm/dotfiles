@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Function to echo the wifi info
+wifi_logo() {
+    case "$1" in
+        "up")
+			if [ "$3" -ge 75 ]; then
+                echo -e "\U000f0928  $2" # Wifi strength 4
+            elif [ "$3" -ge 50 ]; then
+                echo -e "\U000f0925  $2" # Wifi strength 3
+            elif [ "$3" -ge 25 ]; then
+                echo -e "\U000f0922  $2" # Wifi strength 2
+            elif [ "$3" -ge 0 ]; then
+                echo -e "\U000f091f  $2" # Wifi strength 1
+			fi
+            ;;
+        "down")
+            echo -e "\U000f092d " # Wifi disconnected
+            ;;
+        *)
+            echo -e "\U000f0929 " # Wifi unknown
+            ;;
+    esac
+}
+
+stat=$(cat /sys/class/net/wlan0/operstate)
+essid=$(iwgetid | cut -d '"' -f2)
+perc=$(cat /proc/net/wireless | grep wlan0 | cut -d. -f1 | cut -d " " -f6)
+
+if [ "$stat" != "up" ]; then
+    # Set perc to zero to avoid syntax error with bc
+    perc=0
+fi
+
+# Echo the wifi logo
+wifi_logo "$stat" "$essid" "$(bc <<< "scale=0; $perc / 0.7")"

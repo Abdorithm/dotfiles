@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Function to echo the volume info
+volume_logo() {
+	if [ "$1" == "f" ]; then
+		echo -e "\ueee8  " # muted
+	else
+		echo -e "\uf028  "$2" " # volume level
+	fi
+}
+
+stat=$(amixer | grep 'Front Left: Playback' | cut -d ' ' -f8 | cut -b3)
+perc=$(pamixer --get-volume)
+
+# Echo the volume logo
+volume_logo "$stat" "$perc"

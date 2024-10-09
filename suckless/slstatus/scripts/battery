@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+# Function to echo the battery logo
+battery_logo() {
+    case "$1" in
+        "Charging")
+            if [ "$2" -eq 100 ]; then
+                echo -e "\U000f0085" # Battery Charging Full icon
+            elif [ "$2" -ge 90 ]; then
+                echo -e "\U000f008b" # Battery 90%
+            elif [ "$2" -ge 80 ]; then
+                echo -e "\U000f008a" # Battery 80%
+            elif [ "$2" -ge 70 ]; then
+                echo -e "\U000f089e" # Battery 70%
+            elif [ "$2" -ge 60 ]; then
+                echo -e "\U000f0089" # Battery 60%
+            elif [ "$2" -ge 50 ]; then
+                echo -e "\U000f089d" # Battery 50%
+            elif [ "$2" -ge 40 ]; then
+                echo -e "\U000f0088" # Battery 40%
+            elif [ "$2" -ge 30 ]; then
+                echo -e "\U000f0087" # Battery 30%
+            elif [ "$2" -ge 20 ]; then
+                echo -e "\U000f0086" # Battery 20%
+            elif [ "$2" -ge 10 ]; then
+                echo -e "\U000f089c" # Battery 10%
+            else
+                echo -e "\U000f089f" # Battery Empty icon
+            fi
+            ;;
+        "Not charging")
+            if [ "$2" -eq 100 ]; then
+                echo -e "\U000f0079\U000f0afb" # Battery Full icon
+            elif [ "$2" -ge 90 ]; then
+                echo -e "\U000f0082\U000f0afb" # Battery 90%
+            elif [ "$2" -ge 80 ]; then
+                echo -e "\U000f0081\U000f0afb"  # Battery 80%
+            elif [ "$2" -ge 70 ]; then
+                echo -e "\U000f0080\U000f0afb"  # Battery 70%
+            elif [ "$2" -ge 60 ]; then
+                echo -e "\U000f007f\U000f0afb" # Battery 60%
+            elif [ "$2" -ge 50 ]; then
+                echo -e "\U000f007e\U000f0afb" # Battery 50%
+            elif [ "$2" -ge 40 ]; then
+                echo -e "\U000f007d\U000f0afb" # Battery 40%
+            elif [ "$2" -ge 30 ]; then
+                echo -e "\U000f007c\U000f0afb" # Battery 30%
+            elif [ "$2" -ge 20 ]; then
+                echo -e "\U000f007b\U000f0afb" # Battery 20%
+            elif [ "$2" -ge 10 ]; then
+                echo -e "\U000f007a\U000f0afb" # Battery 10%
+            else
+                echo -e "\U000f0084\U000f0afb" # Battery Empty icon
+            fi
+            ;;
+        "Discharging")
+            if [ "$2" -eq 100 ]; then
+                echo -e "\U000f0079\U000f0046" # Battery Discharging Full icon
+            elif [ "$2" -ge 90 ]; then
+                echo -e "\U000f0082\U000f0046" # Battery 90%
+            elif [ "$2" -ge 80 ]; then
+                echo -e "\U000f0081\U000f0046" # Battery 80%
+            elif [ "$2" -ge 70 ]; then
+                echo -e "\U000f0080\U000f0046" # Battery 70%
+            elif [ "$2" -ge 60 ]; then
+                echo -e "\U000f007f\U000f0046" # Battery 60%
+            elif [ "$2" -ge 50 ]; then
+                echo -e "\U000f007e\U000f0046" # Battery 50%
+            elif [ "$2" -ge 40 ]; then
+                echo -e "\U000f007d\U000f0046" # Battery 40%
+            elif [ "$2" -ge 30 ]; then
+                echo -e "\U000f007c\U000f0046" # Battery 30%
+            elif [ "$2" -ge 20 ]; then
+                echo -e "\U000f007b\U000f0046" # Battery 20%
+            elif [ "$2" -ge 10 ]; then
+                echo -e "\U000f007a\U000f0046" # Battery 10%
+            else
+                echo -e "\U000f0084\U000f0046" # Battery Empty icon
+            fi
+            ;;
+        "Full")
+            echo -e "\U000f0079" # Battery Full icon
+            ;;
+        *)
+            echo -e "\U000f0091"
+            ;;
+    esac
+}
+
+stat=$(cat /sys/class/power_supply/BAT0/status)
+cap=$(cat /sys/class/power_supply/BAT0/capacity)
+
+# Echo the battery logo
+battery_logo "$stat" "$cap"

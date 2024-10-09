@@ -1,0 +1,11 @@
+#/usr/bin/env bash
+
+stat="$(ip addr | grep enp3s0 | head -1 | cut -d ' ' -f9)"
+usb_tethering="$(ip addr | grep enp0s20f0u3 | head -1 | cut -d ' ' -f 2)"
+
+if [[ $stat == "UP" || $usb_tethering == "enp0s20f0u3:" ]]
+then
+	echo -e " \U000f0200  "
+else
+	echo " "
+fi
