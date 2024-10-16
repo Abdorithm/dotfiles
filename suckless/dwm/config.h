@@ -9,9 +9,9 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const char *fonts[]          = {
-	"JetBrains Mono Nerd Font:style=Bold:size=10"
+	"JetBrainsMono Nerd Font:style=Bold:size=10"
 };
-static const char dmenufont[]       = "Hack:size=10";
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
 static const char col_gray1[]       = "#111416";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -65,7 +65,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 /* rofi -combi-modi drun,ssh -show combi -icon-theme "Papirus" -show-icons */
 static const char *roficmd[] = { "rofi", "-combi-modi", "drun,ssh", "-show", "combi", "-icon-theme", "\"Papirus\"", "-show-icons", NULL };
-static const char *termcmd[]  = { "xterm", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *brightnessUp[] = { "light", "-A", "5%", NULL };
 static const char *brightnessDown[] = { "light", "-U", "5%", NULL };
 static const char *micMuteToggle[] = { "pamixer", "--source", "alsa_input.pci-0000_00_1f.3.analog-stereo", "-t", NULL };
@@ -82,7 +82,7 @@ static const char *screenShot[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ 0,			 XF86XK_MonBrightnessUp,   spawn,          {.v = brightnessUp } },
 	{ 0,			 XF86XK_MonBrightnessDown, spawn,          {.v = brightnessDown } },

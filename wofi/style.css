@@ -1,7 +1,7 @@
 * {
   border-radius: 0;
   border: none;
-	font-family: JetBrainsMono Nerd Font, sans-serif;
+	font-family: CaskaydiaCove Nerd Font, sans-serif;
   font-weight: 600;
 }
 
@@ -25,7 +25,7 @@ window {
 }
 
 #entry:selected {
-  background-color: #7aa2f7;
+  background-color: #2CC2E7;
   border: none;
 }
 
