@@ -15,7 +15,7 @@ alias grep='grep --color=auto'
 
 . ~/.git-prompt.sh
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'
-PS1='\[\e[36;1m\]\u@\H\[\e[33;1m\]${PS1_CMD1} \[\e[32;1m\]\w\n\[\e[35;1m\]\$ \[\e[0m\]'
+PS1='\[\e[36;1m\]-> \u@\H\[\e[33;1m\]${PS1_CMD1} \[\e[32;1m\]\w\n\[\e[37;1m\]\$ \[\e[0m\]'
 # PS1="\[\e[36;1m\][\u@\h \[\e[33;1m\]\W\[\e[36;1m\]]\[\e[35;1m\] \$\[\e[0m\] "
 
 # Vi mode in command line
