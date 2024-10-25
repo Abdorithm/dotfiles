@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-  "height": 24,
+  "height": 18,
   "spacing": 0,
   "position": "top",
   "modules-left": [
@@ -113,6 +113,6 @@
   },
   "tray": {
     "icon-size": 16,
-    "spacing": 10
+    "spacing": 5
   }
 }

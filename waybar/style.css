@@ -6,6 +6,8 @@
 	font-family: JetBrainsMono Nerd Font, sans-serif;
   font-weight: bold;
   margin: 0px 2px;
+  padding: 0px 0px;
+  min-height: 0;
 }
 
 window#waybar {
@@ -18,15 +20,13 @@ window#waybar {
  * Workspaces 
  * ----------------------------------------------------- */
 #workspaces {
-  /* margin: 5px 3px 5px 12px; */
-  padding: 0px 1px;
   border-radius: 4px;
   border: 0px;
   color: #15161e;
 }
 
 #workspaces button {
-    padding: 0px 8px;
+    padding: 0px 4px;
     margin: 0;
     border-radius: 10px;
     border: 0px;
@@ -72,68 +72,50 @@ tooltip label {
     color: #15161e;
     background: #2CC2E7;
     border-radius: 4px;
-    padding: 0px 5px;
+    padding: 0px 4px;
 }
 
 #custom-packages {
     color: #15161e;
     background: #f7768e;
     border-radius: 4px;
-    padding: 0px 5px;
-    /* margin: 5px;
-    padding: 2px 10px; */
+    padding: 0px 4px;
 }
 
 #clock {
     color: #15161e;
     background: #2CC2E7;
     border-radius: 4px;
-    padding: 0px 5px;
-    /* margin: 5px;
-    padding: 2px 10px; */
+    padding: 0px 4px;
 }
 
 #group-cpuramtemp {
     color: #15161e;
     background: #bb9af7;
     border-radius: 4px;
-    padding: 0px 5px;
-    /* margin: 5px;
-    padding: 2px 10px; */
+    padding: 0px 4px;
 }
 
 #group-battery {
     color: #15161e;
     background: #FD28FF;
     border-radius: 4px;
-    padding: 0px 5px;
-    /* margin: 5px;
-    padding: 2px 10px; */
+    padding: 0px 4px;
 }
 
 #network {
     color: #15161e;
     background: #0CE2A6;
     border-radius: 4px;
-    padding: 0px 5px;
-    /* margin: 5px;
-    padding: 2px 10px; */
+    padding: 0px 4px;
 }
 
 #pulseaudio {
     color: #15161e;
     background: #FF6B7F;
     border-radius: 4px;
-    padding: 0px 5px;
-    /* margin: 5px;
-    padding: 2px 10px; */
+    padding: 0px 4px;
 }
 
 #tray {
-    color: #15161e;
-    background: rgba(26,27,38,0);
-    border-radius: 4px;
-    padding: 0px 5px;
-    /* margin: 5px;
-    padding: 2px 10px; */
 }
