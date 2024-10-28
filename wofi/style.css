@@ -1,19 +1,18 @@
 * {
-  border-radius: 0;
-  border: none;
-	font-family: CaskaydiaCove Nerd Font, sans-serif;
-  font-weight: 600;
+  border-radius: 4;
+	font-family: JetBrainsMono Nerd Font, sans-serif;
+  font-weight: bold;
 }
 
 window {
-	background-color: rgba(26,27,38,0.8);
+	background-color: #111416;
   font-size: 1em;
 }
 
 #input {
   margin-bottom: 5px;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 #text {
@@ -21,7 +20,7 @@ window {
 }
 
 #text:selected {
-  color: #15161e;
+  color: #111416;
 }
 
 #entry:selected {

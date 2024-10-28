@@ -1,10 +1,10 @@
 return {
   { "olimorris/onedarkpro.nvim" },
   { "bluz71/vim-moonfly-colors" },
-  { "zootedb0t/citruszest.nvim" },
-  { "Tsuzat/NeoSolarized.nvim" },
-  { "cdmill/neomodern.nvim" },
-  { "Domeee/mosel.nvim" },
+  { "rafi/awesome-vim-colorschemes" },
+  { "tjdevries/colorbuddy.nvim" },
+  { "comfysage/evergarden" },
+  { "zanglg/nova.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
