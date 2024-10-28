@@ -1,4 +1,8 @@
 font=JetBrainsMono Nerd Font 10
+border-radius=4
+border-size=1
+border-color=#2CC2E7
+background-color=#111416
 
 [app-name="flameshot"]
 invisible=1
