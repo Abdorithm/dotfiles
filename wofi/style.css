@@ -10,9 +10,15 @@ window {
 }
 
 #input {
-  margin-bottom: 5px;
-  color: white;
+  margin: 10px 60px;
+  margin-bottom: 0px;
+  background-color: #111416;
+  border: none;
   font-size: 1.2em;
+}
+
+#entry:drop {
+  background-color: #111416;
 }
 
 #text {
@@ -23,13 +29,22 @@ window {
   color: #111416;
 }
 
+#entry {
+  margin: 5px;
+  padding: 5px;
+}
+
 #entry:selected {
   background-color: #2CC2E7;
+}
+
+#entry:selected arrow {
   border: none;
+  color: #111416;
 }
 
 #inner-box {
-  margin: 5px;
+  margin: 10px 20px;
 }
 
 #scroll {

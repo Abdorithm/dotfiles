@@ -1,2 +1,6 @@
-allow_images = true
-image_size = 32
+allow_images=true
+image_size=24
+term=kitty
+insensitive=true
+width=30%
+line_wrap=word_char
